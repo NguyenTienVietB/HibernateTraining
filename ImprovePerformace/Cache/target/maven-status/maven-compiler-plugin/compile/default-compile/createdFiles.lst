@@ -1,0 +1,3 @@
+com\javatraining\App.class
+com\javatraining\model\User.class
+com\javatraining\utils\HibernateUtils.class
