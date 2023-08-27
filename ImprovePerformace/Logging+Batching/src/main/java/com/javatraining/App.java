@@ -6,6 +6,8 @@ import com.javatraining.utils.HibernateUtils;
 
 import lombok.extern.log4j.Log4j2;
 import org.hibernate.*;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
+
 @Log4j2
 public class App {
     public static void main(String[] args) {
@@ -34,7 +36,41 @@ public class App {
             log.info("Flush the last time at commit time");
 
             session.getTransaction().commit();
+
         }
+//        StatelessSession statelessSession = null;
+//        Transaction txn = null;
+//        ScrollableResults scrollableResults = null;
+//        try {
+//            SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+//            statelessSession = sessionFactory.openStatelessSession();
+//
+//            txn = statelessSession.getTransaction();
+//            txn.begin();
+//
+//            scrollableResults = statelessSession
+//                    .createSelectionQuery("select u from User u")
+//                    .scroll(ScrollMode.FORWARD_ONLY);
+//
+//            while (scrollableResults.next()) {
+//                User User = (User) scrollableResults.get();
+//                statelessSession.update(User);
+//            }
+//
+//            txn.commit();
+//        } catch (RuntimeException e) {
+//            if (txn != null && txn.getStatus() == TransactionStatus.ACTIVE) txn.rollback();
+//            throw e;
+//        } finally {
+//            if (scrollableResults != null) {
+//                scrollableResults.close();
+//            }
+//            if (statelessSession != null) {
+//                statelessSession.close();
+//            }
+//        }
+
     }
+
 
     }
