@@ -11,8 +11,8 @@ import jakarta.persistence.criteria.*;
 import org.hibernate.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
+import org.springframework.transaction.annotation.Transactional;
+import com.javatraining.transaction.Transaction;
 public class App {
 
     public static void main(String[] args) {
@@ -29,7 +29,8 @@ public class App {
                 System.out.println("2. Read");
                 System.out.println("3. Update");
                 System.out.println("4. Delete");
-                System.out.println("5. Exit");
+                System.out.println("5. Create With Transaction");
+                System.out.println("6. Exit");
                 int choice = scanner.nextInt();
 
                 switch (choice) {
@@ -46,6 +47,9 @@ public class App {
                         deleteUser(session, scanner);
                         break;
                     case 5:
+                        Transaction.createUser(session, scanner);
+                        break;
+                    case 6:
                         isRunning = false;
                         break;
                     default:
@@ -56,8 +60,6 @@ public class App {
             session.getTransaction().commit();
         }
     }
-
-
     private static void createUser(Session session, Scanner scanner) {
         User newUser = new User();
         System.out.println("Enter fullname:");
@@ -107,4 +109,5 @@ public class App {
             System.out.println("User not found.");
         }
     }
+
 }
