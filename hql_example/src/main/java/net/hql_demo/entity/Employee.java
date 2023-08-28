@@ -1,5 +1,7 @@
 package net.hql_demo.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 
 @Entity
@@ -57,5 +59,10 @@ public class Employee {
         return "Employee [idEmployee=" + idEmployee + ", firstName=" + firstName + ", lastName=" + lastName
                 + ", salary=" + salary + "]";
     }
+
+	public BigDecimal get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
