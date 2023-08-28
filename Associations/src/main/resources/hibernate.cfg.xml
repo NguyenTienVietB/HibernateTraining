@@ -5,24 +5,26 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name="connection.url">jdbc:mysql://localhost:3306/associations</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/improve</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">Ban280401</property>
+        <property name="connection.password">123456</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <property name="show_sql">true</property>
 
         <property name="format_sql">true</property>
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">create-drop</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
         <property name="current_session_context_class">thread</property>
-        <mapping class="com.javatraining.model.Category" />
-        <mapping class="com.javatraining.model.Post" />
-        <mapping class="com.javatraining.model.Role" />
-        <mapping class="com.javatraining.model.User" />
-        <mapping class="com.javatraining.model.UserProfile" />
+        <mapping class="javatraining.model.oneToOne.Address" />
+        <mapping class="javatraining.model.oneToOne.Person" />
+        <mapping class="javatraining.model.oneToMany.Department" />
+        <mapping class="javatraining.model.oneToMany.Employee" />
+        <mapping class="javatraining.model.manyToMany.Student" />
+        <mapping class="javatraining.model.manyToMany.Course" />
+
     </session-factory>
 </hibernate-configuration>
