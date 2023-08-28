@@ -1,0 +1,8 @@
+javatraining\model\oneToOne\Person.class
+javatraining\model\manyToMany\Student.class
+javatraining\model\oneToMany\Employee.class
+javatraining\model\oneToMany\Department.class
+javatraining\model\oneToOne\Address.class
+javatraining\test\OneToOne.class
+javatraining\utils\HibernateUtils.class
+javatraining\model\manyToMany\Course.class
